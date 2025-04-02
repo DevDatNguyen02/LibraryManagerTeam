@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qc2rx1ICsdM=",
+  "dgSpecHash": "7VxLfrX6g8c=",
   "success": true,
-  "projectFilePath": "C:\\CSharp\\LibTeam\\LibTeam\\LibTeam.csproj",
+  "projectFilePath": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\LibTeam.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\datnguyen\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\datnguyen\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

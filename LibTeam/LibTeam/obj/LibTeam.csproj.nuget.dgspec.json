@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\CSharp\\LibTeam\\LibTeam\\LibTeam.csproj": {}
+    "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\LibTeam.csproj": {}
   },
   "projects": {
-    "C:\\CSharp\\LibTeam\\LibTeam\\LibTeam.csproj": {
+    "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\LibTeam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\CSharp\\LibTeam\\LibTeam\\LibTeam.csproj",
+        "projectUniqueName": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\LibTeam.csproj",
         "projectName": "LibTeam",
-        "projectPath": "C:\\CSharp\\LibTeam\\LibTeam\\LibTeam.csproj",
+        "projectPath": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\LibTeam.csproj",
         "packagesPath": "C:\\Users\\datnguyen\\.nuget\\packages\\",
-        "outputPath": "C:\\CSharp\\LibTeam\\LibTeam\\obj\\",
+        "outputPath": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
