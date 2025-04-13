@@ -3,88 +3,36 @@
   "WorkspaceRootPath": "C:\\Git\\LibraryManagerTeam\\LibTeam\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\libteam.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\libteam.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\dbcontext\\applicationseeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\dbcontext\\applicationseeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\migrations\\20250330065622_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\migrations\\20250330065622_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\dbcontext\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\dbcontext\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\taikhoanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\taikhoanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\appusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\appusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\docgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\docgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\dbcontext\\datacontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\dbcontext\\datacontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\thuvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\thuvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\tuasach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\tuasach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\sachtacgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\sachtacgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\nhaxuatban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\nhaxuatban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\muonsach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\muonsach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\cuonsach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\cuonsach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,278 +42,114 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "LibTeam\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAACUAAAAA/v/////5vwoAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T03:00:13.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "LibTeam\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T03:00:02.077Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DataContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Migrations\\DataContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Migrations\\DataContextModelSnapshot.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Migrations\\DataContextModelSnapshot.cs",
-              "RelativeToolTip": "LibTeam\\Migrations\\DataContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T02:19:39.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationSeedData.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\DbContext\\ApplicationSeedData.cs",
-              "RelativeDocumentMoniker": "LibTeam\\DbContext\\ApplicationSeedData.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\DbContext\\ApplicationSeedData.cs",
-              "RelativeToolTip": "LibTeam\\DbContext\\ApplicationSeedData.cs",
-              "ViewState": "AgIAABkAAADgzMzMzIw5wD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T02:46:05.029Z",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "LibTeam\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "LibTeam\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T09:01:03.224Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20250330065622_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Migrations\\20250330065622_InitialCreate.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Migrations\\20250330065622_InitialCreate.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Migrations\\20250330065622_InitialCreate.cs",
-              "RelativeToolTip": "LibTeam\\Migrations\\20250330065622_InitialCreate.cs",
-              "ViewState": "AgIAADsAAAAAMjMzMzMJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:56:23.278Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DataContextFactory.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\DbContext\\DataContextFactory.cs",
-              "RelativeDocumentMoniker": "LibTeam\\DbContext\\DataContextFactory.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\DbContext\\DataContextFactory.cs",
-              "RelativeToolTip": "LibTeam\\DbContext\\DataContextFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:54:07.488Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Program.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Program.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Program.cs",
-              "RelativeToolTip": "LibTeam\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:49:20.224Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\appsettings.json",
-              "RelativeDocumentMoniker": "LibTeam\\appsettings.json",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\appsettings.json",
-              "RelativeToolTip": "LibTeam\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAANDMzMzP7vwwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-30T06:48:13.466Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\DbContext\\DataContext.cs",
-              "RelativeDocumentMoniker": "LibTeam\\DbContext\\DataContext.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\DbContext\\DataContext.cs",
-              "RelativeToolTip": "LibTeam\\DbContext\\DataContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:46:02.903Z",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "LibTeam\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "LibTeam\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T09:00:46.529Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LibTeam.csproj",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\LibTeam.csproj",
-              "RelativeDocumentMoniker": "LibTeam\\LibTeam.csproj",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\LibTeam.csproj",
-              "RelativeToolTip": "LibTeam\\LibTeam.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-30T06:45:39.395Z",
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "LibTeam\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "LibTeam\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T08:58:56.453Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ThuVien.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\ThuVien.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\ThuVien.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\ThuVien.cs",
-              "RelativeToolTip": "LibTeam\\Models\\ThuVien.cs",
-              "ViewState": "AgIAAAkAAABAMzMzM7MqwBIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:45:20.883Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TuaSach.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\TuaSach.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\TuaSach.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\TuaSach.cs",
-              "RelativeToolTip": "LibTeam\\Models\\TuaSach.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:45:02.874Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TaiKhoanModel.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\TaiKhoanModel.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\TaiKhoanModel.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\TaiKhoanModel.cs",
-              "RelativeToolTip": "LibTeam\\Models\\TaiKhoanModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:44:40.794Z",
+              "DocumentIndex": 3,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "LibTeam\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "LibTeam\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T08:58:25.567Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "SachTacGia.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\SachTacGia.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\SachTacGia.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\SachTacGia.cs",
-              "RelativeToolTip": "LibTeam\\Models\\SachTacGia.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:44:19.34Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "NhaXuatBan.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\NhaXuatBan.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\NhaXuatBan.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\NhaXuatBan.cs",
-              "RelativeToolTip": "LibTeam\\Models\\NhaXuatBan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:44:00.107Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MuonSach.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\MuonSach.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\MuonSach.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\MuonSach.cs",
-              "RelativeToolTip": "LibTeam\\Models\\MuonSach.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:43:33.468Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoginModel.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\LoginModel.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\LoginModel.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\LoginModel.cs",
-              "RelativeToolTip": "LibTeam\\Models\\LoginModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:43:17.004Z",
+              "DocumentIndex": 4,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "LibTeam\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "LibTeam\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T08:57:49.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "LibTeam\\Models\\ErrorViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:42:58.782Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DocGia.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\DocGia.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\DocGia.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\DocGia.cs",
-              "RelativeToolTip": "LibTeam\\Models\\DocGia.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:42:38.338Z",
+              "DocumentIndex": 5,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "LibTeam\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "LibTeam\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T08:56:44.633Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CuonSach.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\CuonSach.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\CuonSach.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\CuonSach.cs",
-              "RelativeToolTip": "LibTeam\\Models\\CuonSach.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:42:15.602Z"
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "LibTeam\\Views\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeToolTip": "LibTeam\\Views\\Shared\\_Layout.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-13T08:55:31.649Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AppUserModel.cs",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\AppUserModel.cs",
-              "RelativeDocumentMoniker": "LibTeam\\Models\\AppUserModel.cs",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\AppUserModel.cs",
-              "RelativeToolTip": "LibTeam\\Models\\AppUserModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:41:47.005Z",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LibTeam\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "LibTeam\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T06:17:15.49Z",
               "EditorCaption": ""
             }
           ]
