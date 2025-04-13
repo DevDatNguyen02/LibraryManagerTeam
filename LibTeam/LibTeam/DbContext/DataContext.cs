@@ -19,6 +19,7 @@ namespace LibTeam.DbContext
         public DbSet<DocGia> DocGias { get; set; }
         public DbSet<CuonSach> CuonSaches { get; set; }
         public DbSet<MuonSach> MuonSaches { get; set; }
+        public DbSet<TaiKhoanModel> TaiKhoanModels { get; set; } 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -109,9 +110,22 @@ namespace LibTeam.DbContext
                       .HasForeignKey(ms => ms.ThuVienID)
                       .OnDelete(DeleteBehavior.Restrict);
                 entity.HasOne(ms => ms.DocGia)
-                      .WithMany() // Nếu muốn thêm collection ở DocGia, thay WithMany(dg => dg.MuonSaches)
+                      .WithMany() 
                       .HasForeignKey(ms => ms.SoTheDG)
                       .OnDelete(DeleteBehavior.Restrict);
+            });
+            // --- Cấu hình cho TaiKhoanModel ---
+            modelBuilder.Entity<TaiKhoanModel>(entity =>
+            {
+                entity.HasKey(tk => tk.Id);
+                entity.Property(tk => tk.UserName)
+                      .IsRequired()
+                      .HasMaxLength(150);
+                entity.Property(tk => tk.Email)
+                      .IsRequired()
+                      .HasMaxLength(150);
+                entity.Property(tk => tk.Password)
+                      .IsRequired();
             });
         }
     }

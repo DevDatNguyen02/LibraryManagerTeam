@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Git\\LibraryManagerTeam\\LibTeam\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\migrations\\20250413091549_initdb_v0.2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\migrations\\20250413091549_initdb_v0.2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\dbcontext\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\dbcontext\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\migrations\\20250330065622_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\migrations\\20250330065622_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\dbcontext\\datacontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\dbcontext\\datacontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\models\\taikhoanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\models\\taikhoanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|c:\\git\\librarymanagerteam\\libteam\\libteam\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D2C6417F-2FB9-45B6-9B91-862F36477232}|LibTeam\\LibTeam.csproj|solutionrelative:libteam\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -51,19 +79,110 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Login\\Index.cshtml",
-              "RelativeDocumentMoniker": "LibTeam\\Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Login\\Index.cshtml",
-              "RelativeToolTip": "LibTeam\\Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-13T09:01:03.224Z",
+              "Title": "20250413091549_InitDB_v0.2.cs",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Migrations\\20250413091549_InitDB_v0.2.cs",
+              "RelativeDocumentMoniker": "LibTeam\\Migrations\\20250413091549_InitDB_v0.2.cs",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Migrations\\20250413091549_InitDB_v0.2.cs",
+              "RelativeToolTip": "LibTeam\\Migrations\\20250413091549_InitDB_v0.2.cs",
+              "ViewState": "AgIAAAkAAACAzczMzEwXwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T09:15:50.216Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Program.cs",
+              "RelativeDocumentMoniker": "LibTeam\\Program.cs",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Program.cs",
+              "RelativeToolTip": "LibTeam\\Program.cs",
+              "ViewState": "AgIAAAgAAADA/////z8lwAMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T09:12:36.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20250330065622_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Migrations\\20250330065622_InitialCreate.cs",
+              "RelativeDocumentMoniker": "LibTeam\\Migrations\\20250330065622_InitialCreate.cs",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Migrations\\20250330065622_InitialCreate.cs",
+              "RelativeToolTip": "LibTeam\\Migrations\\20250330065622_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T09:09:38.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataContextFactory.cs",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\DbContext\\DataContextFactory.cs",
+              "RelativeDocumentMoniker": "LibTeam\\DbContext\\DataContextFactory.cs",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\DbContext\\DataContextFactory.cs",
+              "RelativeToolTip": "LibTeam\\DbContext\\DataContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T09:07:38.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\DbContext\\DataContext.cs",
+              "RelativeDocumentMoniker": "LibTeam\\DbContext\\DataContext.cs",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\DbContext\\DataContext.cs",
+              "RelativeToolTip": "LibTeam\\DbContext\\DataContext.cs",
+              "ViewState": "AgIAAF8AAAAAAwAAAIApwGUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T09:07:11.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TaiKhoanModel.cs",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\TaiKhoanModel.cs",
+              "RelativeDocumentMoniker": "LibTeam\\Models\\TaiKhoanModel.cs",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Models\\TaiKhoanModel.cs",
+              "RelativeToolTip": "LibTeam\\Models\\TaiKhoanModel.cs",
+              "ViewState": "AgIAAAkAAABAAAAAAIAgwBgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T09:06:09.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "LibTeam\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "LibTeam\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAADYAAAComZmZmRkmwAAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T09:02:53.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\User\\Index.cshtml",
+              "RelativeDocumentMoniker": "LibTeam\\Views\\User\\Index.cshtml",
+              "ToolTip": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\User\\Index.cshtml",
+              "RelativeToolTip": "LibTeam\\Views\\User\\Index.cshtml",
+              "ViewState": "AgIAAIIAAAAgZmZmZgYwwEEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T09:02:02.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "LibTeam\\Views\\Home\\Index.cshtml",
@@ -76,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "LibTeam\\Views\\Shared\\Error.cshtml",
@@ -89,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "LibTeam\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -102,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "LibTeam\\Views\\_ViewStart.cshtml",
@@ -115,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "LibTeam\\Views\\_ViewImports.cshtml",
@@ -128,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "LibTeam\\Views\\Shared\\_Layout.cshtml.css",
@@ -141,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "LibTeam\\Views\\Shared\\_Layout.cshtml",

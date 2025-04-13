@@ -21,6 +21,8 @@ namespace LibTeam.Models
         public string Password { get; set; }
 
         public bool RememberMe { get; set; }
-      
+        [Required(ErrorMessage = "Vui lòng chọn vai trò!")]
+        public string Role { get; set; }
+
     }
 }

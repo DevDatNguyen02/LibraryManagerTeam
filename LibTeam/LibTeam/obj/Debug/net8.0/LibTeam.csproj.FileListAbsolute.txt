@@ -79,3 +79,4 @@ C:\Git\LibraryManagerTeam\LibTeam\LibTeam\obj\Debug\net8.0\refint\LibTeam.dll
 C:\Git\LibraryManagerTeam\LibTeam\LibTeam\obj\Debug\net8.0\LibTeam.pdb
 C:\Git\LibraryManagerTeam\LibTeam\LibTeam\obj\Debug\net8.0\LibTeam.genruntimeconfig.cache
 C:\Git\LibraryManagerTeam\LibTeam\LibTeam\obj\Debug\net8.0\ref\LibTeam.dll
+C:\Git\LibraryManagerTeam\LibTeam\LibTeam\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
