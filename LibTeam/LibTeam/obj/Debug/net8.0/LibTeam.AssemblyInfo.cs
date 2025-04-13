@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LibTeam")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2628dc95e40e26a54069b035180264fce2f673fd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb7d63d4a69836869aca615212c50590c22a197f")]
 [assembly: System.Reflection.AssemblyProductAttribute("LibTeam")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LibTeam")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
