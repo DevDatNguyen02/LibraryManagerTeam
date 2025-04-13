@@ -1,0 +1,206 @@
+﻿@using LibTeam.Models
+@model List<LibTeam.Models.TaiKhoanModel>
+
+@{
+    ViewData["Title"] = "Quản lý người dùng";
+}
+
+<div class="row mb-2">
+    <div class="col-sm-6">
+        <h1>Quản lý Tài khoản</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Danh sách tài khoản</li>
+        </ol>
+    </div>
+</div>
+
+@if (TempData["success"] != null)
+{
+                <div class="alert alert-success">@TempData["success"]</div>
+}
+@if (TempData["error"] != null)
+{
+                <div class="alert alert-danger">@TempData["error"]</div>
+}
+
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+         <form method="get" class="form-inline float-sm-right">
+            <input type="text" name="searchTerm" class="form-control" value="@ViewBag.SearchTerm" placeholder="Tìm kiếm..." />
+            <button type="submit" class=" btn btn-success ml-2"> <i class="fas fa-search"></i>Tìm kiếm</button>
+        </form>
+        <button type="button" class="btn btn-primary" onclick="openAddModal()" style="margin-left: 30px;">Thêm người dùng</button>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Tên đăng nhập</th>
+                <th>Số điện thoại</th>
+                <th>Email</th>
+                <th>Vai trò</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var user in Model)
+        {
+                        <tr>
+                            <td>@user.UserName</td>
+                            <td>@user.SDT</td>
+                            <td>@user.Email</td>
+                            <td>@(user.Role == "QuanTriVien" ? "Quản trị viên" : "Nhân viên")</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="openEditModal('@user.Id', '@user.UserName', '@user.SDT', '@user.Email', '@user.Role')">
+                                    <i class="fas fa-edit"></i> Sửa
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm" onclick="deleteUser('@user.Id')">
+                                    <i class="fas fa-trash"></i> Xóa
+                                </button>
+                            </td>
+                        </tr>
+        }
+        </tbody>
+    </table>
+</div>
+<!-- Phân Trang -->
+<div class="card-tools">
+    <ul class="pagination pagination-sm">
+        <li class="page-item">
+            <a href="@Url.Action("Index", new { page = ViewBag.CurrentPage > 1 ? ViewBag.CurrentPage - 1 : 1, searchTerm = ViewBag.SearchTerm })" 
+               class="page-link">&laquo;</a>
+        </li>
+        @if (ViewBag.TotalItems > 0)
+        {
+            int totalPages = (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize); // Khai báo biến trong ngữ cảnh
+            for (int i = 1; i <= totalPages; i++)
+            {
+                                        <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                            <a href="@Url.Action("Index", new { page = i, searchTerm = ViewBag.SearchTerm })" class="page-link">@i</a>
+                                        </li>
+            }
+        }
+        <li class="page-item">
+            <a href="@Url.Action("Index", new { page = ViewBag.CurrentPage < (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize) ? ViewBag.CurrentPage + 1 : (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize), searchTerm = ViewBag.SearchTerm })" 
+               class="page-link">&raquo;</a>
+        </li>
+    </ul>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Thêm người dùng</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="userForm" method="post">
+                    <input type="hidden" id="Id" name="Id" />
+                    <div class="form-group">
+                        <label for="UserName">Tên đăng nhập:</label>
+                        <input type="text" id="UserName" class="form-control" name="UserName" placeholder="Nhập tên đăng nhập" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="SDT">Số điện thoại:</label>
+                        <input type="text" id="SDT" class="form-control" name="SDT" placeholder="Nhập số điện thoại" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email:</label>
+                        <input type="email" id="Email" class="form-control" name="Email" placeholder="Nhập email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Mật khẩu:</label>
+                        <input type="password" id="Password" class="form-control" name="Password" placeholder="Nhập mật khẩu" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="Role">Vai trò:</label>
+                        <select id="Role" name="Role" class="form-control" required>
+                            <option value="">-- Chọn vai trò --</option>
+                            <option value="QuanTriVien">Quản trị viên</option>
+                            <option value="NhanVien">Nhân viên</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script -->
+<script>
+    function openAddModal() {
+        document.getElementById('modalTitle').textContent = "Thêm người dùng";
+        document.getElementById('userForm').action = "@Url.Action("Create", "TaiKhoan")";
+        $('#userModal').modal('show');
+    }
+
+    function openEditModal(id, username, sdt, email, role) {
+        document.getElementById('modalTitle').textContent = "Chỉnh sửa người dùng";
+        document.getElementById('Id').value = id;
+        document.getElementById('UserName').value = username;
+        document.getElementById('SDT').value = sdt;
+        document.getElementById('Email').value = email;
+        document.getElementById('Password').value = ""; // Không hiển thị mật khẩu
+        document.getElementById('Role').value = role;
+        document.getElementById('userForm').action = "@Url.Action("Edit", "TaiKhoan")";
+        $('#userModal').modal('show');
+    }
+
+    // Thêm hàm xử lý submit form
+    $(document).ready(function() {
+        $('#userForm').on('submit', function(e) {
+            e.preventDefault();
+            var formData = $(this).serialize();
+            var url = $(this).attr('action');
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response.success) {
+                        $('#userModal').modal('hide');
+                        location.reload();
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function() {
+                    alert('Có lỗi xảy ra khi cập nhật thông tin');
+                }
+            });
+        });
+    });
+
+    function deleteUser(id) {
+        if (confirm('Bạn có chắc chắn muốn xóa người dùng này?')) {
+            $.ajax({
+                url: '@Url.Action("Delete", "TaiKhoan")',
+                type: 'POST',
+                data: { id: id },
+                success: function(response) {
+                    if (response.success) {
+                        // Tải lại trang sau khi xóa thành công
+                        window.location.href = '@Url.Action("Index", "TaiKhoan")';
+                    } else {
+                        alert(response.message || 'Có lỗi xảy ra khi xóa người dùng');
+                    }
+                },
+                error: function() {
+                    alert('Có lỗi xảy ra khi xóa người dùng');
+                }
+            });
+        }
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
