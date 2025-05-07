@@ -1,23 +1,38 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibTeam.Models
 {
     public class CuonSach
     {
+
         [Key]
-        public int CuonSachID { get; set; }  // Khóa chính tự tăng
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int CuonSachID { get; set; }
 
         [Required]
-        public int TuaSachID { get; set; }   // Khóa ngoại đến TuaSach
+        public string TenSach { get; set; }
 
+        // FK đến TuaSach
+        [ForeignKey("TuaSach")]
+        public int? TuaSachID { get; set; }
+        public TuaSach TuaSach { get; set; }
+
+        // Thông tin tác giả
         [Required]
-        public int ThuVienID { get; set; }   // Khóa ngoại đến ThuVien
+        public string TenTacGia { get; set; }
+
+        // Thông tin Nhà xuất bản
+        [Required]
+        public string TenNXB { get; set; }
 
         [Required]
         public int SoLuong { get; set; }
 
-        // Quan hệ điều hướng
-        public TuaSach TuaSach { get; set; }
-        public ThuVien ThuVien { get; set; }
+        [Required]
+        public string TrangThai { get; set; } = "SanSang";
+
+        // Quan hệ mượn/trả
+        public ICollection<MuonSach> MuonSaches { get; set; }
     }
 }

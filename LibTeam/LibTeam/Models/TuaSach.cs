@@ -1,23 +1,21 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibTeam.Models
 {
     public class TuaSach
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TuaSachID { get; set; }
 
-        [Required, StringLength(150)]
+        [Required]
         public string TenTuaSach { get; set; }
 
         [Required]
-        public int NhaXuatBanID { get; set; }  // Khóa ngoại đến NhaXuatBan
+        public string MoTa { get; set; }
 
-        // Quan hệ điều hướng
-        public NhaXuatBan NhaXuatBan { get; set; }
-
-        public ICollection<CuonSach> CuonSaches { get; set; } = new HashSet<CuonSach>();
-        public ICollection<SachTacGia> SachTacGias { get; set; } = new HashSet<SachTacGia>();
-        public ICollection<MuonSach> MuonSaches { get; set; } = new HashSet<MuonSach>();
+        // Quan hệ 1-n với CuonSach
+        public ICollection<CuonSach> CuonSaches { get; set; }
     }
 }

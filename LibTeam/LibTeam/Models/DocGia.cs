@@ -5,15 +5,10 @@ namespace LibTeam.Models
     public class DocGia
     {
         [Key]
-        public int SoTheDG { get; set; }  // Mã thẻ độc giả
-
-        [Required, StringLength(100)]
-        public string TenDG { get; set; }
-
-        [StringLength(200)]
-        public string DiaChiDG { get; set; }
-
-        [StringLength(15)]
-        public string SDTDG { get; set; }
+        public int SoTheDG { get; set; }
+        public string HoTen { get; set; }
+        public string DiaChi { get; set; }
+        public string SDT { get; set; }
+        public virtual ICollection<MuonSach> MuonSachs { get; set; }
     }
 }

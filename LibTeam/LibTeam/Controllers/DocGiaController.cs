@@ -2,12 +2,13 @@
 using LibTeam.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 
 
 namespace LibTeamrollers
 {
-    [Authorize]
+    [Authorize(Roles = "QuanTriVien")]
     public class DocGiaController : Controller
     {
         private readonly DataContext _context;
@@ -17,94 +18,103 @@ namespace LibTeamrollers
             _context = context;
         }
 
-        public IActionResult Index(string searchTerm, int page = 1, int pageSize = 5, int? ST = null)
+        public async Task<IActionResult> Index(string searchTerm, int page = 1, int pageSize = 5)
         {
-            // Lấy danh sách thư viện từ cơ sở dữ liệu
             var query = _context.DocGias.AsQueryable();
 
-            // Lọc theo tên thư viện hoặc địa chỉ nếu có từ khóa tìm kiếm
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Where(dg => dg.TenDG.Contains(searchTerm) || dg.DiaChiDG.Contains(searchTerm) || dg.SDTDG.Contains(searchTerm));
-            }
-            // Tìm kiếm theo số thẻ độc giả
-            if (ST.HasValue)
-            {
-                query = query.Where(dg => dg.SoTheDG == ST.Value);
+                query = query.Where(dg => dg.HoTen.Contains(searchTerm)
+                                       || dg.DiaChi.Contains(searchTerm)
+                                       || dg.SDT.Contains(searchTerm));
             }
 
-            // Tổng số bản ghi (để hỗ trợ phân trang)
-            var totalItems = query.Count();
+            var totalItems = await query.CountAsync();
+            var docGias = await query.OrderBy(dg => dg.HoTen)
+                                     .Skip((page - 1) * pageSize)
+                                     .Take(pageSize)
+                                     .ToListAsync();
 
-            // Phân trang
-            var docGiaList = query
-                .OrderBy(dg => dg.TenDG)
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToList();
-
-            // Gửi thông tin phân trang đến View
             ViewBag.TotalItems = totalItems;
-            ViewBag.CurrentPage = page;
             ViewBag.PageSize = pageSize;
+            ViewBag.CurrentPage = page;
             ViewBag.SearchTerm = searchTerm;
-            ViewBag.ST = ST;
 
-            return View(docGiaList);
+            return View(docGias);
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(DocGia docGia)
         {
+            if (string.IsNullOrWhiteSpace(docGia.HoTen) ||
+                string.IsNullOrWhiteSpace(docGia.DiaChi) ||
+                string.IsNullOrWhiteSpace(docGia.SDT))
+            {
+                return Json(new { success = false, message = "Vui lòng nhập đầy đủ thông tin" });
+            }
+
             try
             {
-                _context.Add(docGia);
+                _context.DocGias.Add(docGia);
                 await _context.SaveChangesAsync();
-
-                return RedirectToAction(nameof(Index));
+                return Json(new { success = true, message = "Thêm độc giả thành công" });
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "lỗi: " + ex.Message);
+                return Json(new { success = false, message = "Lỗi: " + ex.Message });
             }
-
-            return View(docGia);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int SoTheDG, string TenDG, string DiaChiDG, string SDTDG)
+        public async Task<IActionResult> Edit(DocGia docGia)
         {
-            if (ModelState.IsValid)
+            var existing = await _context.DocGias.FindAsync(docGia.SoTheDG);
+            if (existing == null)
+                return Json(new { success = false, message = "Không tìm thấy độc giả" });
+
+            existing.HoTen = docGia.HoTen;
+            existing.DiaChi = docGia.DiaChi;
+            existing.SDT = docGia.SDT;
+
+            try
             {
-                var docGias = await _context.DocGias.FindAsync(SoTheDG);
-                if (docGias == null)
-                {
-                    return NotFound();
-                }
-                docGias.TenDG = TenDG;
-                docGias.DiaChiDG = DiaChiDG;
-                docGias.SDTDG = SDTDG;
-
-                _context.Update(docGias);
+                _context.DocGias.Update(existing);
                 await _context.SaveChangesAsync();
-
-                // Chuyển hướng sau khi lưu thành công
-                return RedirectToAction(nameof(Index));
+                return Json(new { success = true, message = "Cập nhật thành công" });
             }
-            return View();
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Lỗi cập nhật: " + ex.Message });
+            }
         }
+
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            var docGias = await _context.DocGias.FindAsync(id);
-            if (docGias == null)
+            var docGia = await _context.DocGias.FindAsync(id);
+            if (docGia == null)
+                return Json(new { success = false, message = "Không tìm thấy độc giả" });
+
+            try
             {
-                return NotFound();
+                _context.DocGias.Remove(docGia);
+                await _context.SaveChangesAsync();
+                return Json(new { success = true });
             }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Lỗi khi xóa: " + ex.Message });
+            }
+        }
 
-            _context.DocGias.Remove(docGias);
-            await _context.SaveChangesAsync();
+        [HttpGet]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var docGia = await _context.DocGias.FindAsync(id);
+            if (docGia == null)
+                return Json(new { success = false, message = "Không tìm thấy độc giả" });
 
-            return RedirectToAction(nameof(Index));
+            return Json(new { success = true, data = docGia });
         }
     }
 }

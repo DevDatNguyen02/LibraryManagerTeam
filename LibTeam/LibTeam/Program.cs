@@ -1,31 +1,53 @@
-using LibTeam.DbContext;
+﻿using LibTeam.DbContext;
 using LibTeam.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<DataContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LibraryAPI"));
-});
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddIdentity<AppUserModel, IdentityRole>()
+// 1. DbContext
+builder.Services.AddDbContext<DataContext>(opts =>
+    opts.UseSqlServer(builder.Configuration.GetConnectionString("LibraryAPI")));
+
+// 2. Identity (phải gọi AddEntityFrameworkStores)
+//    – Bỏ hết mọi yêu cầu về password
+builder.Services.AddIdentity<AppUserModel, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 1;
+    options.Password.RequiredUniqueChars = 0;
+})
     .AddEntityFrameworkStores<DataContext>()
     .AddDefaultTokenProviders();
-builder.Services.ConfigureApplicationCookie(options =>
+
+// 3. MVC
+builder.Services.AddControllersWithViews();
+
+// 4. Cookie settings
+builder.Services.ConfigureApplicationCookie(opts =>
 {
-    options.LoginPath = "/Login/Index";
-    options.AccessDeniedPath = "/Login/Index";
+    opts.LoginPath = "/Login/Index";
+    opts.AccessDeniedPath = "/Login/Index";
 });
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// 5. Create roles on startup
+await using (var scope = app.Services.CreateAsyncScope())
+{
+    var rm = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    foreach (var r in new[] { "QuanTriVien", "NhanVien" })
+        if (!await rm.RoleExistsAsync(r))
+            await rm.CreateAsync(new IdentityRole(r));
+}
+
+// 6. Middleware pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -37,17 +59,9 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Login}/{action=Index}/{id?}");
-});
-
-/*app.MapControllerRoute(
+// 7. Routing
+app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");*/
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();
