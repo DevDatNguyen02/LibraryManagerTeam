@@ -1,0 +1,197 @@
+﻿@using LibTeam.Models
+@model List<DocGia>
+
+@{
+    ViewData["Title"] = "Quản lý Độc giả";
+}
+
+<!-- Header + Breadcrumb -->
+<div class="row mb-2">
+    <div class="col-sm-6">
+        <h1>Quản lý Độc giả</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Danh sách độc giả</li>
+        </ol>
+    </div>
+</div>
+
+<!-- Tools: Search + Add -->
+<div class="row mb-3">
+    <div class="col-sm-8">
+        <form class="form-inline" method="get">
+            <input type="text" name="searchTerm" class="form-control mr-2" placeholder="Tìm kiếm..." value="@ViewBag.SearchTerm" />
+            <button type="submit" class="btn btn-success"><i class="fas fa-search"></i> Tìm kiếm</button>
+        </form>
+    </div>
+    <div class="col-sm-4 text-right">
+        <button class="btn btn-primary" onclick="openAddModal()">
+            <i class="fas fa-plus"></i> Thêm độc giả
+        </button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+            <thead>
+                <tr>
+                    <th>Số thẻ</th>
+                    <th>Họ tên</th>
+                    <th>Địa chỉ</th>
+                    <th>SĐT</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dg in Model)
+                {
+                    <tr>
+                        <td>@dg.SoTheDG</td>
+                        <td>@dg.HoTen</td>
+                        <td>@dg.DiaChi</td>
+                        <td>@dg.SDT</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" onclick="openEditModal(@dg.SoTheDG)">
+                                <i class="fas fa-edit"></i> Sửa
+                            </button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteDocGia(@dg.SoTheDG)">
+                                <i class="fas fa-trash"></i> Xóa
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Phân trang -->
+    <div class="card-footer clearfix">
+        <ul class="pagination pagination-sm m-0 float-right">
+            <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1, searchTerm = ViewBag.SearchTerm })">&laquo;</a>
+            </li>
+            @for (int i = 1; i <= (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize); i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { page = i, searchTerm = ViewBag.SearchTerm })">@i</a>
+                </li>
+            }
+            <li class="page-item @(ViewBag.CurrentPage == (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize) ? "disabled" : "")">
+                <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1, searchTerm = ViewBag.SearchTerm })">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Modal Thêm/Sửa -->
+<div class="modal fade" id="docGiaModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Thêm độc giả</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <form id="docGiaForm" method="post">
+                    <input type="hidden" id="SoTheDG" name="SoTheDG" />
+                    <div class="form-group">
+                        <label for="HoTen">Họ tên:</label>
+                        <input type="text" id="HoTen" name="HoTen" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="DiaChi">Địa chỉ:</label>
+                        <input type="text" id="DiaChi" name="DiaChi" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="SDT">Số điện thoại:</label>
+                        <input type="text" id="SDT" name="SDT" class="form-control" required minlength="8" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <script>
+        function openAddModal() {
+            $('#modalTitle').text('Thêm độc giả');
+            $('#docGiaForm')[0].reset();
+            $('#docGiaForm').attr('action', '@Url.Action("Create", "DocGia")');
+            $('#docGiaModal').modal('show');
+        }
+
+        function openEditModal(id) {
+            $.get('@Url.Action("GetById", "DocGia")', { id }, function (res) {
+                if (res.success) {
+                    $('#modalTitle').text('Chỉnh sửa độc giả');
+                    $('#SoTheDG').val(res.data.soTheDG);
+                    $('#HoTen').val(res.data.hoTen);
+                    $('#DiaChi').val(res.data.diaChi);
+                    $('#SDT').val(res.data.sdt);
+                    $('#docGiaForm').attr('action', '@Url.Action("Edit", "DocGia")');
+                    $('#docGiaModal').modal('show');
+                } else {
+                    toastr.error(res.message);
+                }
+            });
+        }
+
+        function deleteDocGia(id) {
+            if (confirm('Bạn có chắc muốn xóa độc giả này?')) {
+                $.post('@Url.Action("Delete", "DocGia")', { id }, function (res) {
+                    if (res.success) {
+                        toastr.success('Xóa thành công');
+                        location.reload();
+                    } else {
+                        toastr.error(res.message);
+                    }
+                });
+            }
+        }
+
+        $('#docGiaForm').validate({
+            rules: {
+                HoTen: "required",
+                DiaChi: "required",
+                SDT: {
+                    required: true,
+                    minlength: 8
+                }
+            },
+            messages: {
+                HoTen: "Vui lòng nhập họ tên",
+                DiaChi: "Vui lòng nhập địa chỉ",
+                SDT: {
+                    required: "Vui lòng nhập số điện thoại",
+                    minlength: "SĐT tối thiểu 8 ký tự"
+                }
+            },
+            submitHandler: function (form) {
+                const action = $(form).attr('action');
+                $.post(action, $(form).serialize(), function (res) {
+                    if (res.success) {
+                        toastr.success(res.message);
+                        $('#docGiaModal').modal('hide');
+                        $('#docGiaModal').one('hidden.bs.modal', () => location.reload());
+                    } else {
+                        toastr.error(res.message);
+                    }
+                });
+                return false;
+            }
+        });
+    </script>
+}

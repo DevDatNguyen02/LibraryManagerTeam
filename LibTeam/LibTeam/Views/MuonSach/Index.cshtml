@@ -1,0 +1,495 @@
+﻿@using LibTeam.Models
+@model List<MuonSach>
+
+@{
+    ViewData["Title"] = "Quản lý Mượn Sách";
+    var dsCuonSach = ViewBag.ListCuonSach as List<CuonSach>;
+    var dsDocGia = ViewBag.ListDocGia as List<DocGia>;
+    var currentPage = ViewBag.CurrentPage ?? 1;
+    var pageSize = ViewBag.PageSize ?? 5;
+    var totalItems = ViewBag.TotalItems ?? 0;
+    var search = ViewBag.Search as string;
+    var dateMuon = ViewBag.DateMuon as string;
+    var dateTra = ViewBag.DateTra as string;
+}
+
+<meta charset="utf-8" />
+
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Quản lý mượn sách</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Danh sách mượn sách</li>
+                    </ol>
+                </div>
+            </div>
+
+        <div class="d-flex justify-content-end mb-3">
+            <form method="get" class="form-inline float-sm-right">
+                <div class="form-group mr-2">
+                    <label class="mr-2" for="search">Tìm kiếm:</label>
+                    <input type="text" name="search" class="form-control" value="@search" placeholder="Tên sách hoặc độc giả" />
+                </div>
+                <div class="form-group mr-2">
+                    <label class="mr-2" for="dateMuon">Ngày mượn:</label>
+                    <input type="date" name="dateMuon" class="form-control" value="@dateMuon" />
+                </div>
+                <div class="form-group mr-2">
+                    <label class="mr-2" for="dateTra">Ngày trả:</label>
+                    <input type="date" name="dateTra" class="form-control" value="@dateTra" />
+                </div>
+                <button type="submit" class="btn btn-primary">Lọc</button>
+            </form>
+            <button type="button" class="btn btn-secondary mr-3" onclick="window.location.href='@Url.Action("Index","MuonSach")'">
+                <i class="fas fa-undo"></i>
+            </button>
+            <button type="button" class="btn btn-primary" onclick="openAddModal()" style="margin-left: 30px;">
+                <i class="fas fa-plus"></i> Mượn sách
+            </button>
+        </div>
+
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Mã cuốn sách</th>
+                                    <th>Tên cuốn sách</th>
+                                    <th>Số thẻ độc giả</th>
+                                    <th>Tên độc giả</th>
+                                    <th>Ngày mượn</th>
+                                    <th>Ngày trả</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.CuonSachID</td>
+                                            <td>@item.CuonSach?.TenSach</td>
+                                            <td>@item.SoTheDG</td>
+                                            <td>@item.DocGia?.HoTen</td>
+                                            <td>@item.NgayMuon.ToString("dd/MM/yyyy")</td>
+                                            <td>@(item.NgayTra?.ToString("dd/MM/yyyy") ?? "")</td>
+                                            <td>
+                                                @if (item.NgayTra == null)
+                                                {
+                                                    <form action="@Url.Action("UpdateNgayTra", "MuonSach")" method="post" class="d-inline">
+                                                        @Html.AntiForgeryToken()
+                                                        <input type="hidden" name="cuonSachID" value="@item.CuonSachID" />
+                                                        <input type="hidden" name="soTheDG" value="@item.SoTheDG" />
+                                                        <input type="hidden" name="ngayTra" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                                                        <button type="submit" class="btn btn-success" onclick="return confirm('Xác nhận trả sách?')">
+                                                            <i class="fas fa-book-return"></i> Trả Sách
+                                                        </button>
+                                                    </form>
+                                                }
+                                                else
+                                                {
+                                                    <form action="@Url.Action("Delete", "MuonSach")" method="post" class="d-inline">
+                                                        @Html.AntiForgeryToken()
+                                                        <input type="hidden" name="cuonSachID" value="@item.CuonSachID" />
+                                                        <input type="hidden" name="soTheDG" value="@item.SoTheDG" />
+                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không?')">
+                                                            <i class="fas fa-trash-alt"></i> Xóa
+                                                        </button>
+                                                    </form>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="7" class="text-center">Không có dữ liệu</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="card-tools">
+            <ul class="pagination pagination-sm">
+                <li class="page-item">
+                    <a href="@Url.Action("Index", new {
+                        page = ViewBag.CurrentPage > 1 ? ViewBag.CurrentPage - 1 : 1,
+                        search = ViewBag.Search,
+                        dateMuon = ViewBag.DateMuon,
+                        dateTra = ViewBag.DateTra
+                    })" class="page-link">«</a>
+                </li>
+                @if (ViewBag.TotalItems > 0)
+                {
+                    int totalPages = (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize);
+                    for (int i = 1; i <= totalPages; i++)
+                    {
+                        <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                            <a href="@Url.Action("Index", new {
+                                page = i,
+                                search = ViewBag.Search,
+                                dateMuon = ViewBag.DateMuon,
+                                dateTra = ViewBag.DateTra
+                            })" class="page-link">@i</a>
+                        </li>
+                    }
+                }
+                <li class="page-item">
+                    <a href="@Url.Action("Index", new {
+                        page = ViewBag.CurrentPage < (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize) ? ViewBag.CurrentPage + 1 : (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize),
+                        search = ViewBag.Search,
+                        dateMuon = ViewBag.DateMuon,
+                        dateTra = ViewBag.DateTra
+                    })" class="page-link">»</a>
+                </li>
+            </ul>
+        </div>
+
+<!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 700px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Thêm Mượn Sách</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <form id="addForm" asp-action="Create" method="post">
+                                @Html.AntiForgeryToken()
+                                <div class="form-group">
+                                    <label for="CuonSachID">Cuốn Sách</label>
+                                    <select class="form-control" name="CuonSachID" required>
+                                        <option value="" hidden>--Chọn cuốn sách--</option>
+                                        @if (dsCuonSach != null)
+                                        {
+                                            foreach (var item in dsCuonSach)
+                                            {
+                                                <option value="@item.CuonSachID">@item.TenSach (@item.TuaSach?.TenTuaSach)</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="SoTheDG">Độc Giả</label>
+                                    <select class="form-control" name="SoTheDG" required>
+                                        <option value="" hidden>--Chọn độc giả--</option>
+                                        @if (dsDocGia != null)
+                                        {
+                                            foreach (var item in dsDocGia)
+                                            {
+                                                <option value="@item.SoTheDG">@item.HoTen</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="NgayMuon">Ngày Mượn</label>
+                                    <input type="date" class="form-control" id="NgayMuon" name="NgayMuon"
+                                           min="2000-01-01" max="@DateTime.Today.ToString("yyyy-MM-dd")" required />
+                                    <div class="invalid-feedback">
+                                        Vui lòng chọn ngày mượn hợp lệ.
+                                    </div>
+                                </div>
+                                <div class="modal-footer justify-content-between">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                    <button type="submit" class="btn btn-primary">Thêm</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openAddModal() {
+            document.getElementById('modalTitle').textContent = "Thêm Mượn Sách";
+            document.getElementById('addForm').reset();
+            $('#exampleModalCenter').modal('show');
+        }
+
+        $(document).ready(function() {
+            console.log('Trang đã tải, kiểm tra thông báo TempData');
+
+            var successMessage = '@TempData["Success"]';
+            var errorMessage = '@TempData["Error"]';
+
+            if (successMessage) {
+                console.log('Hiển thị thông báo thành công:', successMessage);
+                alert(successMessage);
+            }
+            if (errorMessage) {
+                console.log('Hiển thị thông báo lỗi:', errorMessage);
+                alert(errorMessage);
+            }
+
+            if (!successMessage && !errorMessage) {
+                console.log('Không có thông báo TempData để hiển thị');
+            }
+        });
+    </script>
+}@using LibTeam.Models
+@model List<MuonSach>
+
+@{
+    ViewData["Title"] = "Quản lý Mượn Sách";
+    var dsCuonSach = ViewBag.ListCuonSach as List<CuonSach>;
+    var dsDocGia = ViewBag.ListDocGia as List<DocGia>;
+    var currentPage = ViewBag.CurrentPage ?? 1;
+    var pageSize = ViewBag.PageSize ?? 5;
+    var totalItems = ViewBag.TotalItems ?? 0;
+    var search = ViewBag.Search as string;
+    var dateMuon = ViewBag.DateMuon as string;
+    var dateTra = ViewBag.DateTra as string;
+}
+
+<meta charset="utf-8" />
+
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Quản lý mượn sách</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Danh sách mượn sách</li>
+                    </ol>
+                </div>
+            </div>
+
+        <div class="d-flex justify-content-end mb-3">
+            <form method="get" class="form-inline float-sm-right">
+                <div class="form-group mr-2">
+                    <label class="mr-2" for="search">Tìm kiếm:</label>
+                    <input type="text" name="search" class="form-control" value="@search" placeholder="Tên sách hoặc độc giả" />
+                </div>
+                <div class="form-group mr-2">
+                    <label class="mr-2" for="dateMuon">Ngày mượn:</label>
+                    <input type="date" name="dateMuon" class="form-control" value="@dateMuon" />
+                </div>
+                <div class="form-group mr-2">
+                    <label class="mr-2" for="dateTra">Ngày trả:</label>
+                    <input type="date" name="dateTra" class="form-control" value="@dateTra" />
+                </div>
+                <button type="submit" class="btn btn-primary">Lọc</button>
+            </form>
+            <button type="button" class="btn btn-secondary mr-3" onclick="window.location.href='@Url.Action("Index","MuonSach")'">
+                <i class="fas fa-undo"></i>
+            </button>
+            <button type="button" class="btn btn-primary" onclick="openAddModal()" style="margin-left: 30px;">
+                <i class="fas fa-plus"></i> Mượn sách
+            </button>
+        </div>
+
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Mã cuốn sách</th>
+                                    <th>Tên cuốn sách</th>
+                                    <th>Số thẻ độc giả</th>
+                                    <th>Tên độc giả</th>
+                                    <th>Ngày mượn</th>
+                                    <th>Ngày trả</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.CuonSachID</td>
+                                            <td>@item.CuonSach?.TenSach</td>
+                                            <td>@item.SoTheDG</td>
+                                            <td>@item.DocGia?.HoTen</td>
+                                            <td>@item.NgayMuon.ToString("dd/MM/yyyy")</td>
+                                            <td>@(item.NgayTra?.ToString("dd/MM/yyyy") ?? "")</td>
+                                            <td>
+                                                @if (item.NgayTra == null)
+                                                {
+                                                    <form action="@Url.Action("UpdateNgayTra", "MuonSach")" method="post" class="d-inline">
+                                                        @Html.AntiForgeryToken()
+                                                        <input type="hidden" name="cuonSachID" value="@item.CuonSachID" />
+                                                        <input type="hidden" name="soTheDG" value="@item.SoTheDG" />
+                                                        <input type="hidden" name="ngayTra" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                                                        <button type="submit" class="btn btn-success" onclick="return confirm('Xác nhận trả sách?')">
+                                                            <i class="fas fa-book-return"></i> Trả Sách
+                                                        </button>
+                                                    </form>
+                                                }
+                                                else
+                                                {
+                                                    <form action="@Url.Action("Delete", "MuonSach")" method="post" class="d-inline">
+                                                        @Html.AntiForgeryToken()
+                                                        <input type="hidden" name="cuonSachID" value="@item.CuonSachID" />
+                                                        <input type="hidden" name="soTheDG" value="@item.SoTheDG" />
+                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không?')">
+                                                            <i class="fas fa-trash-alt"></i> Xóa
+                                                        </button>
+                                                    </form>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="7" class="text-center">Không có dữ liệu</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="card-tools">
+            <ul class="pagination pagination-sm">
+                <li class="page-item">
+                    <a href="@Url.Action("Index", new {
+                        page = ViewBag.CurrentPage > 1 ? ViewBag.CurrentPage - 1 : 1,
+                        search = ViewBag.Search,
+                        dateMuon = ViewBag.DateMuon,
+                        dateTra = ViewBag.DateTra
+                    })" class="page-link">«</a>
+                </li>
+                @if (ViewBag.TotalItems > 0)
+                {
+                    int totalPages = (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize);
+                    for (int i = 1; i <= totalPages; i++)
+                    {
+                        <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                            <a href="@Url.Action("Index", new {
+                                page = i,
+                                search = ViewBag.Search,
+                                dateMuon = ViewBag.DateMuon,
+                                dateTra = ViewBag.DateTra
+                            })" class="page-link">@i</a>
+                        </li>
+                    }
+                }
+                <li class="page-item">
+                    <a href="@Url.Action("Index", new {
+                        page = ViewBag.CurrentPage < (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize) ? ViewBag.CurrentPage + 1 : (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize),
+                        search = ViewBag.Search,
+                        dateMuon = ViewBag.DateMuon,
+                        dateTra = ViewBag.DateTra
+                    })" class="page-link">»</a>
+                </li>
+            </ul>
+        </div>
+
+<!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 700px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Thêm Mượn Sách</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <form id="addForm" asp-action="Create" method="post">
+                                @Html.AntiForgeryToken()
+                                <div class="form-group">
+                                    <label for="CuonSachID">Cuốn Sách</label>
+                                    <select class="form-control" name="CuonSachID" required>
+                                        <option value="" hidden>--Chọn cuốn sách--</option>
+                                        @if (dsCuonSach != null)
+                                        {
+                                            foreach (var item in dsCuonSach)
+                                            {
+                                                <option value="@item.CuonSachID">@item.TenSach (@item.TuaSach?.TenTuaSach)</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="SoTheDG">Độc Giả</label>
+                                    <select class="form-control" name="SoTheDG" required>
+                                        <option value="" hidden>--Chọn độc giả--</option>
+                                        @if (dsDocGia != null)
+                                        {
+                                            foreach (var item in dsDocGia)
+                                            {
+                                                <option value="@item.SoTheDG">@item.HoTen</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="NgayMuon">Ngày Mượn</label>
+                                    <input type="date" class="form-control" id="NgayMuon" name="NgayMuon"
+                                           min="2000-01-01" max="@DateTime.Today.ToString("yyyy-MM-dd")" required />
+                                    <div class="invalid-feedback">
+                                        Vui lòng chọn ngày mượn hợp lệ.
+                                    </div>
+                                </div>
+                                <div class="modal-footer justify-content-between">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                    <button type="submit" class="btn btn-primary">Thêm</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openAddModal() {
+            document.getElementById('modalTitle').textContent = "Thêm Mượn Sách";
+            document.getElementById('addForm').reset();
+            $('#exampleModalCenter').modal('show');
+        }
+
+        $(document).ready(function() {
+            console.log('Trang đã tải, kiểm tra thông báo TempData');
+
+            var successMessage = '@TempData["Success"]';
+            var errorMessage = '@TempData["Error"]';
+
+            if (successMessage) {
+                console.log('Hiển thị thông báo thành công:', successMessage);
+                alert(successMessage);
+            }
+            if (errorMessage) {
+                console.log('Hiển thị thông báo lỗi:', errorMessage);
+                alert(errorMessage);
+            }
+
+            if (!successMessage && !errorMessage) {
+                console.log('Không có thông báo TempData để hiển thị');
+            }
+        });
+    </script>
+}

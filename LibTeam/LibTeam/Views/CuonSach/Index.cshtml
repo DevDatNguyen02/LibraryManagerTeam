@@ -1,0 +1,308 @@
+﻿@using LibTeam.Models
+@model List<CuonSach>
+
+@{
+    ViewData["Title"] = "Quản lý Cuốn Sách";
+    var tuaSachList = ViewBag.TuaSachList as List<TuaSach> ?? new List<TuaSach>();
+}
+
+<!-- Header + Breadcrumb -->
+<div class="row mb-2">
+    <div class="col-sm-6">
+        <h1>@ViewData["Title"]</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+            <li class="breadcrumb-item active">Danh sách cuốn sách</li>
+        </ol>
+    </div>
+</div>
+
+<!-- Search + Add -->
+<div class="row mb-3">
+    <div class="col-sm-8">
+        <form class="form-inline" method="get">
+            <input type="text" name="search" class="form-control mr-2"
+                   placeholder="Tìm kiếm cuốn sách..." value="@ViewBag.Search" />
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-search"></i> Tìm kiếm
+            </button>
+        </form>
+    </div>
+    <div class="col-sm-4 text-right">
+        <button type="button" class="btn btn-primary" onclick="openAddModal()">
+            <i class="fas fa-plus"></i> Thêm cuốn sách
+        </button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên sách</th>
+                    <th>Tựa sách</th>
+                    <th>Tác giả</th>
+                    <th>NXB</th>
+                    <th>Số lượng</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cs in Model)
+                {
+                    <tr>
+                        <td>@cs.CuonSachID</td>
+                        <td>@cs.TenSach</td>
+                        <td>@(cs.TuaSach?.TenTuaSach ?? "Chưa chọn")</td>
+                        <td>@cs.TenTacGia</td>
+                        <td>@cs.TenNXB</td>
+                        <td>@cs.SoLuong</td>
+                        <td>
+                            <span class="badge badge-@(cs.TrangThai=="SanSang"?"success":"warning")">
+                                @(cs.TrangThai == "SanSang" ? "Sẵn sàng" : "Đang cho mượn")
+                            </span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm"
+                                    onclick="openEditModal(@cs.CuonSachID)">
+                                <i class="fas fa-edit"></i> Sửa
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm"
+                                    onclick="deleteCuonSach(@cs.CuonSachID)">
+                                <i class="fas fa-trash"></i> Xóa
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Phân trang -->
+    <div class="card-footer clearfix">
+        <ul class="pagination pagination-sm m-0 float-right">
+            <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                <a class="page-link"
+                   href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1, search = ViewBag.Search })">
+                    &laquo;
+                </a>
+            </li>
+            @for (int i = 1; i <= (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize); i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link"
+                       href="@Url.Action("Index", new { page = i, search = ViewBag.Search })">@i</a>
+                </li>
+            }
+            <li class="page-item @(ViewBag.CurrentPage == (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize) ? "disabled" : "")">
+                <a class="page-link"
+                   href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1, search = ViewBag.Search })">
+                    &raquo;
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Modal Thêm/Sửa -->
+<div class="modal fade" id="cuonSachModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Form Create -->
+            <form id="createForm" style="display:none;" method="post">
+                @Html.AntiForgeryToken()
+                <div class="modal-header">
+                    <h5 class="modal-title">Thêm Cuốn Sách</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Tên sách</label>
+                        <input name="TenSach" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Tựa sách</label>
+                        <select name="TuaSachID" class="form-control" required>
+                            <option value="">-- Chọn --</option>
+                            @foreach (var ts in tuaSachList)
+                            {
+                                <option value="@ts.TuaSachID">@ts.TenTuaSach</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tác giả</label>
+                        <input name="TenTacGia" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Nhà xuất bản</label>
+                        <input name="TenNXB" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Số lượng</label>
+                        <input type="number" name="SoLuong" class="form-control" min="0" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Trạng thái</label>
+                        <select name="TrangThai" class="form-control" required>
+                            <option value="SanSang">Sẵn sàng</option>
+                            <option value="DangMuon">Đang cho mượn</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                </div>
+            </form>
+
+            <!-- Form Edit -->
+            <form id="editForm" style="display:none;" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="CuonSachID" id="CuonSachID" />
+                <div class="modal-header">
+                    <h5 class="modal-title">Chỉnh sửa Cuốn Sách</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Tên sách</label>
+                        <input name="TenSach" id="TenSach" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Tựa sách</label>
+                        <select name="TuaSachID" id="TuaSachID" class="form-control" required>
+                            <option value="">-- Chọn --</option>
+                            @foreach (var ts in tuaSachList)
+                            {
+                                <option value="@ts.TuaSachID">@ts.TenTuaSach</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tác giả</label>
+                        <input name="TenTacGia" id="TenTacGia" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Nhà xuất bản</label>
+                        <input name="TenNXB" id="TenNXB" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Số lượng</label>
+                        <input type="number" name="SoLuong" id="SoLuong" class="form-control" min="0" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Trạng thái</label>
+                        <select name="TrangThai" id="TrangThai" class="form-control" required>
+                            <option value="SanSang">Sẵn sàng</option>
+                            <option value="DangMuon">Đang cho mượn</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        function openAddModal() {
+            $('#editForm').hide();
+            $('#createForm').show().trigger('reset');
+            $('#createForm').attr('action', '@Url.Action("Create", "CuonSach")');
+            $('#cuonSachModal').modal('show');
+        }
+
+        function openEditModal(id) {
+            $('#createForm').hide();
+            $('#editForm').show();
+            $.get('@Url.Action("Details", "CuonSach")', { id }, function(res) {
+                if (!res.success) { toastr.error(res.message); return; }
+                // gán giá trị vào form edit
+                $('#CuonSachID').val(res.cuonSachID);
+                $('#TenSach').val(res.tenSach);
+                $('#TuaSachID').val(res.tuaSachID);
+                $('#TenTacGia').val(res.tenTacGia);
+                $('#TenNXB').val(res.tenNXB);
+                $('#SoLuong').val(res.soLuong);
+                $('#TrangThai').val(res.trangThai);
+                $('#editForm').attr('action', '@Url.Action("Edit", "CuonSach")?id=' + res.cuonSachID);
+                $('#cuonSachModal').modal('show');
+            });
+        }
+
+        function deleteCuonSach(id) {
+            if (!confirm('Bạn có chắc muốn xóa?')) return;
+            $.post('@Url.Action("DeleteConfirmed", "CuonSach")', { id }, function(res) {
+                if (res.success) {
+                    toastr.success(res.message);
+                    setTimeout(() => location.reload(), 800);
+                } else {
+                    toastr.error(res.message);
+                }
+            });
+        }
+
+        // Validate + AJAX Create
+        $('#createForm').validate({
+            rules: {
+                TenSach: "required",
+                TuaSachID: "required",
+                TenTacGia: "required",
+                TenNXB: "required",
+                SoLuong: { required: true, min: 0 },
+                TrangThai: "required"
+            },
+            submitHandler: function(form) {
+                var $f = $(form);
+                $.post($f.attr('action'), $f.serialize(), function(res) {
+                    if (res.success) {
+                        toastr.success(res.message);
+                        $('#cuonSachModal').modal('hide');
+                        setTimeout(() => location.reload(), 800);
+                    } else toastr.error(res.message);
+                });
+                return false;
+            }
+        });
+
+        // Validate + AJAX Edit
+        $('#editForm').validate({
+            rules: {
+                TenSach: "required",
+                TuaSachID: "required",
+                TenTacGia: "required",
+                TenNXB: "required",
+                SoLuong: { required: true, min: 0 },
+                TrangThai: "required"
+            },
+            submitHandler: function(form) {
+                var $f = $(form);
+                $.post($f.attr('action'), $f.serialize(), function(res) {
+                    if (res.success) {
+                        toastr.success(res.message);
+                        $('#cuonSachModal').modal('hide');
+                        setTimeout(() => location.reload(), 800);
+                    } else toastr.error(res.message);
+                });
+                return false;
+            }
+        });
+    </script>
+}
