@@ -22,6 +22,9 @@ namespace LibTeam.Models
         [Required]
         public DateTime NgayMuon { get; set; }
 
+        [Required]
+        public DateTime NgayHenTra { get; set; }
+
         public DateTime? NgayTra { get; set; }
 
 
