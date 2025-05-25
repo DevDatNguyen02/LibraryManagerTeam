@@ -1,0 +1,233 @@
+﻿@{
+    ViewData["Title"] = "Báo cáo thống kê";
+}
+
+<div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1>Báo cáo thống kê mượn sách</h1>
+        </div>
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Báo cáo thống kê</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="card-title">Thống kê lượt mượn sách</h3>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary" onclick="loadThongKe('ngay')">Theo ngày</button>
+                            <button type="button" class="btn btn-primary" onclick="loadThongKe('tuan')">Theo tuần</button>
+                            <button type="button" class="btn btn-primary" onclick="loadThongKe('thang')">Theo tháng</button>
+                            <button type="button" class="btn btn-success" onclick="loadThongKe('tuasach')">Theo tựa sách</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <canvas id="chartMuonSach" style="min-height: 400px;"></canvas>
+                        </div>
+                        <div class="col-md-4">
+                            <canvas id="pieChart" style="min-height: 400px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        let myChart = null;
+        let pieChart = null;
+
+        function loadThongKe(loaiThongKe) {
+            fetch(`/BaoCao/GetThongKeMuonSach?loaiThongKe=${loaiThongKe}`)
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        updateChart(result.data, loaiThongKe);
+                    } else {
+                        alert(result.message);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function updateChart(data, loaiThongKe) {
+            if (loaiThongKe === 'tuasach') {
+                updateTuaSachCharts(data);
+            } else {
+                updateSachChart(data, loaiThongKe);
+            }
+        }
+
+        function updateTuaSachCharts(data) {
+            const ctx = document.getElementById('chartMuonSach').getContext('2d');
+            const pieCtx = document.getElementById('pieChart').getContext('2d');
+
+            // Destroy existing charts
+            if (myChart) myChart.destroy();
+            if (pieChart) pieChart.destroy();
+
+            // Show pie chart container
+            document.getElementById('pieChart').style.display = 'block';
+
+            // Prepare data
+            const labels = data.map(item => item.tenTuaSach);
+            const values = data.map(item => item.soLuotMuon);
+            const totalMuon = values.reduce((a, b) => a + b, 0);
+            const percentages = values.map(value => ((value / totalMuon) * 100).toFixed(1));
+
+            // Colors for charts
+            const backgroundColors = [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)'
+            ];
+
+            // Create bar chart
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Số lượt mượn theo tựa sách',
+                        data: values,
+                        backgroundColor: backgroundColors,
+                        borderColor: backgroundColors.map(color => color.replace('0.5', '1')),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Thống kê lượt mượn theo tựa sách',
+                            font: { size: 16 }
+                        }
+                    }
+                }
+            });
+
+            // Create pie chart
+            pieChart = new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: labels.map((label, i) => `${label} (${percentages[i]}%)`),
+                    datasets: [{
+                        data: values,
+                        backgroundColor: backgroundColors,
+                        borderColor: backgroundColors.map(color => color.replace('0.5', '1')),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Tỷ lệ mượn theo tựa sách',
+                            font: { size: 16 }
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateSachChart(data, loaiThongKe) {
+            const ctx = document.getElementById('chartMuonSach').getContext('2d');
+
+            // Destroy existing charts
+            if (myChart) myChart.destroy();
+            if (pieChart) pieChart.destroy();
+
+            // Hide pie chart container
+            document.getElementById('pieChart').style.display = 'none';
+
+            // Prepare data
+            const labels = data.map(item => item.tenSach);
+            const values = data.map(item => item.soLuotMuon);
+
+            // Create bar chart
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: `Số lượt mượn ${getLoaiThongKeText(loaiThongKe)}`,
+                        data: values,
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: `Top 10 sách được mượn nhiều nhất ${getLoaiThongKeText(loaiThongKe)}`,
+                            font: { size: 16 }
+                        }
+                    }
+                }
+            });
+        }
+
+        function getLoaiThongKeText(loaiThongKe) {
+            switch(loaiThongKe) {
+                case 'ngay':
+                    return 'trong ngày';
+                case 'tuan':
+                    return 'trong tuần';
+                case 'thang':
+                    return 'trong tháng';
+                case 'tuasach':
+                    return 'theo tựa sách';
+                default:
+                    return '';
+            }
+        }
+
+        // Load thống kê theo ngày khi trang được tải
+        document.addEventListener('DOMContentLoaded', function() {
+            loadThongKe('ngay');
+        });
+    </script>
+} 
