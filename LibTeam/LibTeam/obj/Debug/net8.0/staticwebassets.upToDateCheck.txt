@@ -2057,12 +2057,8 @@ wwwroot\Admin\plugins\uplot\uPlot.iife.min.js
 wwwroot\Admin\plugins\uplot\uPlot.min.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
-wwwroot\Images\3.PNG
-wwwroot\Images\321794668_538202368237063_7565549356822496111_n.jpg
-wwwroot\Images\Annotation 2023-08-13 231900.png
-wwwroot\Images\mua-1-pizza-tặng-1-coca.jpg
-wwwroot\Images\slider_1.png
-wwwroot\Images\test.jpg
+wwwroot\Images\bg.jpg
+wwwroot\Images\css\login.css
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

@@ -1,6 +1,8 @@
 ﻿using LibTeam.DbContext;
 using LibTeam.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace LibTeam.Controllers
 {

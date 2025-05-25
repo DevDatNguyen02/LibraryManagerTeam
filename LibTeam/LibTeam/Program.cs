@@ -1,7 +1,7 @@
-﻿using LibTeam.DbContext;
-using LibTeam.Models;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using LibTeam.Models;
+using LibTeam.DbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,9 +39,31 @@ var app = builder.Build();
 await using (var scope = app.Services.CreateAsyncScope())
 {
     var rm = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var um = scope.ServiceProvider.GetRequiredService<UserManager<AppUserModel>>();
+
+    // Tạo roles nếu chưa tồn tại
     foreach (var r in new[] { "QuanTriVien", "NhanVien" })
         if (!await rm.RoleExistsAsync(r))
             await rm.CreateAsync(new IdentityRole(r));
+
+    // Tạo tài khoản QuanTriVien mặc định nếu chưa tồn tại
+    var adminUsername = "admin";
+    var adminUser = await um.FindByNameAsync(adminUsername);
+    if (adminUser == null)
+    {
+        adminUser = new AppUserModel
+        {
+            UserName = adminUsername,
+            Email = "admin@libteam.com",
+            PhoneNumber = "0123456789",
+            EmailConfirmed = true
+        };
+        var result = await um.CreateAsync(adminUser, "Admin@123");
+        if (result.Succeeded)
+        {
+            await um.AddToRoleAsync(adminUser, "QuanTriVien");
+        }
+    }
 }
 
 // 6. Middleware pipeline

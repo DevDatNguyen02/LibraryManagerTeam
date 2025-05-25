@@ -1,0 +1,78 @@
+﻿body.login-page {
+    background: url("/Images/bg.jpg") no-repeat center center fixed !important;
+    background-size: cover !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    padding: 20px !important;
+}
+
+    .login-box .card {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .login-box .card-header {
+        background: transparent !important;
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+    }
+
+    .login-box .card-body {
+        padding: 20px !important;
+    }
+
+    .login-box .input-group .form-control {
+        border-radius: 8px !important;
+        padding: 12px !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .login-box .input-group-text {
+        border-radius: 8px !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .login-box .btn-primary {
+        border-radius: 8px !important;
+        padding: 12px !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        background: #007bff !important;
+        border: none !important;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2) !important;
+        transition: all 0.3s ease !important;
+    }
+
+        .login-box .btn-primary:hover {
+            background: #0056b3 !important;
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3) !important;
+            transform: translateY(-1px) !important;
+        }
+
+    .login-box .card-header a.h1 {
+        color: #2c3e50 !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        font-size: 24px !important;
+    }
+
+.login-box-msg {
+    color: #666 !important;
+    font-size: 16px !important;
+    margin-bottom: 20px !important;
+}

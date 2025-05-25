@@ -7,10 +7,12 @@ namespace LibTeam.Controllers
     public class LoginController : Controller
     {
         private readonly SignInManager<AppUserModel> _signInManager;
+        private readonly ILogger<LoginController> _logger;
 
-        public LoginController(SignInManager<AppUserModel> signInManager)
+        public LoginController(SignInManager<AppUserModel> signInManager, ILogger<LoginController> logger)
         {
             _signInManager = signInManager;
+            _logger = logger;
         }
 
         // GET: Login
@@ -24,20 +26,16 @@ namespace LibTeam.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(TaiKhoanModel loginInfo)
         {
-            if (!ModelState.IsValid)
-            {
-                return View("Index", loginInfo); 
-            }
-
-            var result = await _signInManager.PasswordSignInAsync(loginInfo.UserName, loginInfo.Password, false, false);
+            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(loginInfo.UserName, loginInfo.Password, false, false);
 
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "TuaSach");  
+                return RedirectToAction("Index", "DocGia");
             }
             else
             {
-                ModelState.AddModelError(string.Empty, "Tên đăng nhập hoặc mật khẩu không đúng.");
+                ModelState.AddModelError(string.Empty, "Email hoặc mật khẩu không đúng.");
+                // Trả lại view với cùng model để hiển thị lại lỗi
                 return View("Index", loginInfo);
             }
         }

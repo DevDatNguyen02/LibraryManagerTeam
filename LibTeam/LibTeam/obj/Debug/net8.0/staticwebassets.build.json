@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6BBgSVm4/Voi1VbYCUijjpKNsF6R1dYj46b8dJtvPjM=",
+  "Hash": "A6OlgEk8j4Seo2jNJl/4akpA2V+m/1q5hdcTDegsRjc=",
   "Source": "LibTeam",
   "BasePath": "_content/LibTeam",
   "Mode": "Default",
@@ -43298,12 +43298,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\3.PNG",
+      "Identity": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\bg.jpg",
       "SourceId": "LibTeam",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\",
       "BasePath": "_content/LibTeam",
-      "RelativePath": "Images/3#[.{fingerprint}]?.PNG",
+      "RelativePath": "Images/bg#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -43312,19 +43312,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "p2x2r191hh",
-      "Integrity": "D31Uck01h3r6cQ4Bp9qYSHVOkPiY9x6J5aMrU3w6xSM=",
+      "Fingerprint": "n993387l3d",
+      "Integrity": "VftPcq0JewuiTKRxb1sB6KKAXyHQvjDcabTw4Vemn0c=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\3.PNG"
+      "OriginalItemSpec": "wwwroot\\Images\\bg.jpg"
     },
     {
-      "Identity": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\321794668_538202368237063_7565549356822496111_n.jpg",
+      "Identity": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\css\\login.css",
       "SourceId": "LibTeam",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\",
       "BasePath": "_content/LibTeam",
-      "RelativePath": "Images/321794668_538202368237063_7565549356822496111_n#[.{fingerprint}]?.jpg",
+      "RelativePath": "Images/css/login#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -43333,95 +43333,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "w0xxnsa29r",
-      "Integrity": "cKxnFIxK6S50NiwlE+z+HO8Yx+dh7CqIzyQJWeh9fHA=",
+      "Fingerprint": "5apf8atufp",
+      "Integrity": "ve2loTRZXe11PrGTcjJuubNbPVhwolPsdDCn3oFZjoM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\321794668_538202368237063_7565549356822496111_n.jpg"
-    },
-    {
-      "Identity": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\Annotation 2023-08-13 231900.png",
-      "SourceId": "LibTeam",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\",
-      "BasePath": "_content/LibTeam",
-      "RelativePath": "Images/Annotation 2023-08-13 231900#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ri85orr7pq",
-      "Integrity": "Y46Vi+qqbj0ATriSnovUAClQdExP3AnEQpeWjENERlk=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Annotation 2023-08-13 231900.png"
-    },
-    {
-      "Identity": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\mua-1-pizza-tặng-1-coca.jpg",
-      "SourceId": "LibTeam",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\",
-      "BasePath": "_content/LibTeam",
-      "RelativePath": "Images/mua-1-pizza-tặng-1-coca#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "pcuipc34yb",
-      "Integrity": "1/xNQ6vghZeisRqSeZR4dSUbF7G5ATXJbV8hJ1/vY9g=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\mua-1-pizza-tặng-1-coca.jpg"
-    },
-    {
-      "Identity": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\slider_1.png",
-      "SourceId": "LibTeam",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\",
-      "BasePath": "_content/LibTeam",
-      "RelativePath": "Images/slider_1#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "d19uj1oprg",
-      "Integrity": "vx8QFP3rV1jYzIN5M/2Y5XmXpdg6afJ90YPOtGZBlK4=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\slider_1.png"
-    },
-    {
-      "Identity": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\test.jpg",
-      "SourceId": "LibTeam",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\",
-      "BasePath": "_content/LibTeam",
-      "RelativePath": "Images/test#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "2q51w3xqlo",
-      "Integrity": "xpCyF9WIutHmn/76B2WJxn+I5hWZp1EQDvFo/tAKfEU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\test.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\css\\login.css"
     },
     {
       "Identity": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\js\\site.js",
@@ -213482,8 +213398,8 @@
       ]
     },
     {
-      "Route": "Images/3.p2x2r191hh.PNG",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\3.PNG",
+      "Route": "Images/bg.jpg",
+      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\bg.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -213492,64 +213408,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "85738"
+          "Value": "2602775"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/png"
+          "Value": "image/jpeg"
         },
         {
           "Name": "ETag",
-          "Value": "\"D31Uck01h3r6cQ4Bp9qYSHVOkPiY9x6J5aMrU3w6xSM=\""
+          "Value": "\"VftPcq0JewuiTKRxb1sB6KKAXyHQvjDcabTw4Vemn0c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "p2x2r191hh"
-        },
-        {
-          "Name": "label",
-          "Value": "Images/3.PNG"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-D31Uck01h3r6cQ4Bp9qYSHVOkPiY9x6J5aMrU3w6xSM="
-        }
-      ]
-    },
-    {
-      "Route": "Images/3.PNG",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\3.PNG",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "85738"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"D31Uck01h3r6cQ4Bp9qYSHVOkPiY9x6J5aMrU3w6xSM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
+          "Value": "Thu, 24 Apr 2025 15:54:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -213559,13 +213430,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-D31Uck01h3r6cQ4Bp9qYSHVOkPiY9x6J5aMrU3w6xSM="
+          "Value": "sha256-VftPcq0JewuiTKRxb1sB6KKAXyHQvjDcabTw4Vemn0c="
         }
       ]
     },
     {
-      "Route": "Images/321794668_538202368237063_7565549356822496111_n.jpg",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\321794668_538202368237063_7565549356822496111_n.jpg",
+      "Route": "Images/bg.n993387l3d.jpg",
+      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\bg.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -213574,7 +213445,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "52214"
+          "Value": "2602775"
         },
         {
           "Name": "Content-Type",
@@ -213582,48 +213453,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cKxnFIxK6S50NiwlE+z+HO8Yx+dh7CqIzyQJWeh9fHA=\""
+          "Value": "\"VftPcq0JewuiTKRxb1sB6KKAXyHQvjDcabTw4Vemn0c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-cKxnFIxK6S50NiwlE+z+HO8Yx+dh7CqIzyQJWeh9fHA="
-        }
-      ]
-    },
-    {
-      "Route": "Images/321794668_538202368237063_7565549356822496111_n.w0xxnsa29r.jpg",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\321794668_538202368237063_7565549356822496111_n.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "52214"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cKxnFIxK6S50NiwlE+z+HO8Yx+dh7CqIzyQJWeh9fHA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
+          "Value": "Thu, 24 Apr 2025 15:54:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -213633,21 +213467,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "w0xxnsa29r"
+          "Value": "n993387l3d"
         },
         {
           "Name": "label",
-          "Value": "Images/321794668_538202368237063_7565549356822496111_n.jpg"
+          "Value": "Images/bg.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-cKxnFIxK6S50NiwlE+z+HO8Yx+dh7CqIzyQJWeh9fHA="
+          "Value": "sha256-VftPcq0JewuiTKRxb1sB6KKAXyHQvjDcabTw4Vemn0c="
         }
       ]
     },
     {
-      "Route": "Images/Annotation 2023-08-13 231900.png",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\Annotation 2023-08-13 231900.png",
+      "Route": "Images/css/login.5apf8atufp.css",
+      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\css\\login.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -213656,56 +213490,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "263323"
+          "Value": "2448"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/png"
+          "Value": "text/css"
         },
         {
           "Name": "ETag",
-          "Value": "\"Y46Vi+qqbj0ATriSnovUAClQdExP3AnEQpeWjENERlk=\""
+          "Value": "\"ve2loTRZXe11PrGTcjJuubNbPVhwolPsdDCn3oFZjoM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Y46Vi+qqbj0ATriSnovUAClQdExP3AnEQpeWjENERlk="
-        }
-      ]
-    },
-    {
-      "Route": "Images/Annotation 2023-08-13 231900.ri85orr7pq.png",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\Annotation 2023-08-13 231900.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "263323"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Y46Vi+qqbj0ATriSnovUAClQdExP3AnEQpeWjENERlk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
+          "Value": "Thu, 24 Apr 2025 16:24:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -213715,21 +213512,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ri85orr7pq"
+          "Value": "5apf8atufp"
         },
         {
           "Name": "label",
-          "Value": "Images/Annotation 2023-08-13 231900.png"
+          "Value": "Images/css/login.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Y46Vi+qqbj0ATriSnovUAClQdExP3AnEQpeWjENERlk="
+          "Value": "sha256-ve2loTRZXe11PrGTcjJuubNbPVhwolPsdDCn3oFZjoM="
         }
       ]
     },
     {
-      "Route": "Images/mua-1-pizza-tặng-1-coca.jpg",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\mua-1-pizza-tặng-1-coca.jpg",
+      "Route": "Images/css/login.css",
+      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\css\\login.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -213738,238 +213535,29 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "344692"
+          "Value": "2448"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/jpeg"
+          "Value": "text/css"
         },
         {
           "Name": "ETag",
-          "Value": "\"1/xNQ6vghZeisRqSeZR4dSUbF7G5ATXJbV8hJ1/vY9g=\""
+          "Value": "\"ve2loTRZXe11PrGTcjJuubNbPVhwolPsdDCn3oFZjoM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
+          "Value": "Thu, 24 Apr 2025 16:24:21 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
+          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-1/xNQ6vghZeisRqSeZR4dSUbF7G5ATXJbV8hJ1/vY9g="
-        }
-      ]
-    },
-    {
-      "Route": "Images/mua-1-pizza-tặng-1-coca.pcuipc34yb.jpg",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\mua-1-pizza-tặng-1-coca.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "344692"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"1/xNQ6vghZeisRqSeZR4dSUbF7G5ATXJbV8hJ1/vY9g=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "pcuipc34yb"
-        },
-        {
-          "Name": "label",
-          "Value": "Images/mua-1-pizza-tặng-1-coca.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-1/xNQ6vghZeisRqSeZR4dSUbF7G5ATXJbV8hJ1/vY9g="
-        }
-      ]
-    },
-    {
-      "Route": "Images/slider_1.d19uj1oprg.png",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\slider_1.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2046271"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vx8QFP3rV1jYzIN5M/2Y5XmXpdg6afJ90YPOtGZBlK4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d19uj1oprg"
-        },
-        {
-          "Name": "label",
-          "Value": "Images/slider_1.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-vx8QFP3rV1jYzIN5M/2Y5XmXpdg6afJ90YPOtGZBlK4="
-        }
-      ]
-    },
-    {
-      "Route": "Images/slider_1.png",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\slider_1.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2046271"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vx8QFP3rV1jYzIN5M/2Y5XmXpdg6afJ90YPOtGZBlK4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-vx8QFP3rV1jYzIN5M/2Y5XmXpdg6afJ90YPOtGZBlK4="
-        }
-      ]
-    },
-    {
-      "Route": "Images/test.2q51w3xqlo.jpg",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\test.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "688728"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"xpCyF9WIutHmn/76B2WJxn+I5hWZp1EQDvFo/tAKfEU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2q51w3xqlo"
-        },
-        {
-          "Name": "label",
-          "Value": "Images/test.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-xpCyF9WIutHmn/76B2WJxn+I5hWZp1EQDvFo/tAKfEU="
-        }
-      ]
-    },
-    {
-      "Route": "Images/test.jpg",
-      "AssetFile": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\test.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "688728"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"xpCyF9WIutHmn/76B2WJxn+I5hWZp1EQDvFo/tAKfEU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 03:19:35 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-xpCyF9WIutHmn/76B2WJxn+I5hWZp1EQDvFo/tAKfEU="
+          "Value": "sha256-ve2loTRZXe11PrGTcjJuubNbPVhwolPsdDCn3oFZjoM="
         }
       ]
     },
@@ -218752,7 +218340,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 09:15:40 GMT"
+          "Value": "Sun, 25 May 2025 13:45:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -218789,7 +218377,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 09:15:40 GMT"
+          "Value": "Sun, 25 May 2025 13:45:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -218834,7 +218422,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 09:15:40 GMT"
+          "Value": "Sun, 25 May 2025 13:45:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -218879,7 +218467,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 09:15:40 GMT"
+          "Value": "Sun, 25 May 2025 13:45:07 GMT"
         },
         {
           "Name": "Cache-Control",

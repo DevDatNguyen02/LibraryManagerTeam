@@ -8233,28 +8233,12 @@
       "PackagePath": "staticwebassets\\Admin\\plugins\\uplot\\uPlot.min.css"
     },
     {
-      "Id": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\3.PNG",
-      "PackagePath": "staticwebassets\\Images\\3.PNG"
+      "Id": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\bg.jpg",
+      "PackagePath": "staticwebassets\\Images\\bg.jpg"
     },
     {
-      "Id": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\321794668_538202368237063_7565549356822496111_n.jpg",
-      "PackagePath": "staticwebassets\\Images\\321794668_538202368237063_7565549356822496111_n.jpg"
-    },
-    {
-      "Id": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\Annotation 2023-08-13 231900.png",
-      "PackagePath": "staticwebassets\\Images\\Annotation 2023-08-13 231900.png"
-    },
-    {
-      "Id": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\mua-1-pizza-tặng-1-coca.jpg",
-      "PackagePath": "staticwebassets\\Images\\mua-1-pizza-tặng-1-coca.jpg"
-    },
-    {
-      "Id": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\slider_1.png",
-      "PackagePath": "staticwebassets\\Images\\slider_1.png"
-    },
-    {
-      "Id": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\test.jpg",
-      "PackagePath": "staticwebassets\\Images\\test.jpg"
+      "Id": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\Images\\css\\login.css",
+      "PackagePath": "staticwebassets\\Images\\css\\login.css"
     },
     {
       "Id": "C:\\Git\\LibraryManagerTeam\\LibTeam\\LibTeam\\wwwroot\\css\\site.css",
